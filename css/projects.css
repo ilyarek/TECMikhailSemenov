@@ -527,3 +527,106 @@
                 gap: 1rem;
             }
         }
+
+	@media (max-width: 768px) {
+	    .page-header-content,
+	    .page-title,
+	    .page-subtitle,
+	    .section-title,
+	    .project-item,
+	    .project-content,
+	    .project-header,
+	    .project-title,
+	    .project-description,
+	    .project-tech,
+	    .footer-col {
+	        text-align: center;
+	    }
+	    
+	    .nav-menu {
+	        align-items: center;
+	        text-align: center;
+	    }
+	    
+	    .header-container {
+	        flex-direction: column;
+	        align-items: center;
+	    }
+	    
+	    .logo {
+	        margin-bottom: 1rem;
+	        justify-content: center;
+	    }
+	    
+	    .project-item {
+	        flex-direction: column;
+	        align-items: center;
+	    }
+	    
+	    .project-image {
+	        margin-bottom: 1.5rem;
+	    }
+	    
+	    .project-header {
+	        flex-direction: column;
+	        align-items: center;
+	    }
+	    
+	    .footer-container {
+	        grid-template-columns: 1fr;
+	        text-align: center;
+	    }
+	    
+	    .footer-col h3::after {
+	        left: 50%;
+	        transform: translateX(-50%);
+	    }
+	    
+	    .social-links {
+	        justify-content: center;
+	    }
+	    
+	    .project-tech {
+	        justify-content: center;
+	    }
+	    
+	    .page-header {
+	        text-align: center;
+	        padding-top: 8rem;
+	    }
+	    
+	    .page-header-content {
+	        padding: 2rem;
+	    }
+	}
+	
+	@media (max-width: 480px) {
+	    .project-item {
+	        padding: 1.5rem;
+	    }
+	    
+	    .project-tech {
+	        flex-direction: column;
+	        align-items: center;
+	    }
+	    
+	    .tech-tag {
+	        width: 100%;
+	        text-align: center;
+	    }
+	    
+	    .header-container {
+	        flex-direction: row;
+	        justify-content: space-between;
+	        padding: 1rem;
+	    }
+	    
+	    .logo {
+	        margin-bottom: 0;
+	    }
+	    
+	    .nav-menu.active {
+	        text-align: center;
+	        align-items: center;
+	    }
+	}
