@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Статьи Михаила Семёнова - IT-решения, цифровизация, управление проектами и автоматизация бизнес-процессов в НПП ТЭК.">
+    <title>Статьи | Михаил Семёнов | IT-руководитель</title>
+    <link rel="icon" href="https://www.mikhailsemenov.com/wp-content/themes/MS-theme/img/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/articles.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="index.html" class="logo">
+                    <img src="https://www.mikhailsemenov.com/wp-content/themes/MS-theme/img/тэк.png" alt="НПП ТЭК">
+                    <span class="logo-text">Михаил Семёнов</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="articles.html" class="active">Статьи</a></li>
+                        <li><a href="projects.html">Проекты</a></li>
+                        <li><a href="index.html#company">Компания</a></li>
+                        <li><a href="index.html#contact">Контакты</a></li>
+                    </ul>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="articles-hero">
+            <div class="container">
+                <div class="hero-content animate-slide-up">
+                    <h1>Статьи и публикации</h1>
+                    <p>Делюсь опытом в области IT-управления, цифровизации бизнеса и внедрения современных технологий</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="search-section">
+            <div class="container">
+                <div class="search-controls">
+                    <div class="search-box">
+                        <div class="search-icon"><i class="fas fa-search"></i></div>
+                        <input type="text" class="search-input" placeholder="Поиск по статьям..." id="searchInput">
+                    </div>
+                    <div class="filter-buttons" id="filterButtons">
+                        <button class="filter-btn active" data-category="all">Все статьи</button>
+                        <button class="filter-btn" data-category="digitalization">Цифровизация</button>
+                        <button class="filter-btn" data-category="it-management">IT-управление</button>
+                        <button class="filter-btn" data-category="automation">Автоматизация</button>
+                        <button class="filter-btn" data-category="erp">ERP-системы</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="articles-section">
+            <div class="container">
+                <div class="articles-header">
+                    <h2 class="section-title">Публикации</h2>
+                    <div class="articles-count" id="articlesCount">Показано: 4 из 4 статей</div>
+                </div>
+                
+                <div class="articles-list" id="articlesList">
+                    <article class="article-item featured-article animate-slide-up" data-category="digitalization">
+                        <div class="article-header">
+                            <h3 class="article-title">Томское предприятие в тренде цифровизации <span class="featured-badge">Рекомендуемое</span></h3>
+                            <span class="article-category">Цифровизация</span>
+                        </div>
+                        <p class="article-excerpt">2 марта 2022 года Президент РФ подписал Указ № 83, направленный на ускоренное развитие IT-отрасли. НПП «Томская электронная компания» (ТЭК) активно внедряет цифровые технологии.</p>
+                        <div class="article-footer">
+                            <span class="article-date">6 марта 2022 • 3 мин чтения</span>
+                            <a class="read-more-btn">Читать полностью</a>
+                        </div>
+                    </article>
+
+                    <article class="article-item animate-slide-up" data-category="automation" style="animation-delay: 0.1s">
+                        <div class="article-header">
+                            <h3 class="article-title">«Томская Электронная Компания» внедрила около тридцати решений в сфере цифровизации бизнеса</h3>
+                            <span class="article-category">Автоматизация</span>
+                        </div>
+                        <p class="article-excerpt">Специалисты отдела информационно-технического обеспечения предприятия используют около 30 систем электронной отчетности и различных цифровых сервисов.</p>
+                        <div class="article-footer">
+                            <span class="article-date">4 марта 2022 • 4 мин чтения</span>
+                            <a class="read-more-btn">Читать полностью</a>
+                        </div>
+                    </article>
+
+                    <article class="article-item animate-slide-up" data-category="it-management" style="animation-delay: 0.2s">
+                        <div class="article-header">
+                            <h3 class="article-title">Softline и Microsoft заключили соглашение Enterprise Agreement с ООО НПП ТЭК</h3>
+                            <span class="article-category">IT-управление</span>
+                        </div>
+                        <p class="article-excerpt">Softline в Томске заключила с НПП «Томская электронная компания» соглашение Microsoft Enterprise Agreement на поставку ПО.</p>
+                        <div class="article-footer">
+                            <span class="article-date">30 июля 2012 • 6 мин чтения</span>
+                            <a class="read-more-btn">Читать полностью</a>
+                        </div>
+                    </article>
+
+                    <article class="article-item animate-slide-up" data-category="erp" style="animation-delay: 0.3s">
+                        <div class="article-header">
+                            <h3 class="article-title">НПП «Томская электронная компания» и «Утилекс АйТи» подводят итоги первого этапа внедрения ERP-системы</h3>
+                            <span class="article-category">ERP-системы</span>
+                        </div>
+                        <p class="article-excerpt">НПП «ТЭК» и «Утилекс АйТи» завершили первый этап внедрения Microsoft Dynamics AX.</p>
+                        <div class="article-footer">
+                            <span class="article-date">27 февраля 2009 • 5 мин чтения</span>
+                            <a class="read-more-btn">Читать полностью</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <h3>Статьи не найдены</h3>
+                    <p>Попробуйте изменить критерии поиска или выбрать другую категорию.</p>
+                </div>
+
+                <div class="pagination" id="pagination" style="display: none;">
+                    <a href="#" class="pagination-btn" id="prevBtn">← Предыдущая</a>
+                    <a href="#" class="pagination-btn active">1</a>
+                    <a href="#" class="pagination-btn">2</a>
+                    <a href="#" class="pagination-btn">3</a>
+                    <a href="#" class="pagination-btn" id="nextBtn">Следующая →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Михаил Семёнов</h3>
+                    <p>IT-директор с многолетним опытом управления проектами и цифровой трансформации бизнеса.</p>
+                    <div class="social-links">
+                        <a href="mailto:semyonovmn@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+73822999784"><i class="fas fa-phone-alt"></i></a>
+                        <a href="https://t.me/SemyonovMN" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Навигация</h3>
+                    <div class="footer-links">
+                        <a href="articles.html">Статьи</a>
+                        <a href="projects.html">Проекты</a>
+                        <a href="index.html#company">Компания</a>
+                        <a href="index.html#contact">Контакты</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>НПП "ТЭК"</h3>
+                    <p><a href="https://npptec.ru" target="_blank">Официальный сайт</a></p>
+                    <p>634040, Россия, г. Томск, ул. Высоцкого, д. 33</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="modal" id="articleModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <img src="" alt="" class="modal-image" id="modalImage">
+            <div class="article-category" id="modalCategory">Категория</div>
+            <h2 class="modal-title" id="modalTitle">Название статьи</h2>
+            <div class="modal-meta">
+                <span class="article-date" id="modalDate">Дата</span>
+                <span class="article-read-time" id="modalReadTime">Время чтения</span>
+            </div>
+            <div class="modal-text" id="modalText">
+                Полный текст статьи будет здесь...
+            </div>
+        </div>
+    </div>
+    <script src="js/articles.js"></script>
+</body>
