@@ -1,5 +1,5 @@
 	document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
+            // Переключение мобильного меню
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const navMenu = document.getElementById('navMenu');
             
@@ -12,7 +12,7 @@
                 });
             }
             
-            // Header scroll effect
+            // Эффект прокрутки для заголовка
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -22,7 +22,7 @@
                 }
             });
             
-            // Smooth scrolling for anchor links
+            // Плавная прокрутка для якорных ссылок
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     if (this.getAttribute('href') !== '#') {
@@ -44,7 +44,7 @@
                 });
             });
             
-            // Form submission
+            // Отправка формы
             const contactForm = document.getElementById('contactForm');
             if (contactForm) {
                 contactForm.addEventListener('submit', function(e) {
@@ -53,14 +53,13 @@
                     const submitButton = this.querySelector('button[type="submit"]');
                     const originalText = submitButton.innerHTML;
                     
-                    // Simulate form submission
                     submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
                     submitButton.disabled = true;
                     
                     setTimeout(() => {
                         submitButton.innerHTML = '<i class="fas fa-check"></i> Отправлено!';
                         
-                        // Show success message
+                        // Показать сообщение об успехе
                         const notification = document.createElement('div');
                         notification.innerHTML = `
                             <div style="position: fixed; bottom: 2rem; right: 2rem; padding: 1rem 1.5rem; background: var(--accent); color: white; border-radius: var(--radius); box-shadow: var(--shadow-lg); z-index: 1000; animation: fadeIn 0.3s ease-out;">
@@ -70,16 +69,14 @@
                         `;
                         document.body.appendChild(notification);
                         
-                        // Reset form
+                        // Сброс формы
                         this.reset();
                         
-                        // Remove notification after delay
                         setTimeout(() => {
                             notification.style.animation = 'fadeOut 0.3s ease-out';
                             setTimeout(() => notification.remove(), 300);
                         }, 3000);
                         
-                        // Reset button after delay
                         setTimeout(() => {
                             submitButton.innerHTML = originalText;
                             submitButton.disabled = false;
@@ -88,7 +85,7 @@
                 });
             }
             
-            // Initialize Swiper
+            // Инициализация переключения
             const swiper = new Swiper('.swiper', {
                 slidesPerView: 1,
                 spaceBetween: 20,
@@ -115,7 +112,7 @@
                 }
             });
 
-            // Intersection Observer for animations
+            // Наблюдатель пересечений для анимаций
             const animateElements = document.querySelectorAll('.animate-slide-up, .animate-fade');
             
             const observer = new IntersectionObserver((entries) => {
