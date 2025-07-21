@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu toggle
+            // Переключение мобильного меню
             const mobileMenuToggle = document.getElementById('mobileMenuToggle');
             const navMenu = document.getElementById('navMenu');
             
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             
-            // Header scroll effect
+            // Эффект прокрутки для заголовка
             const header = document.getElementById('header');
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
             
-            // Smooth scrolling for anchor links
+            // Плавная прокрутка для якорных ссылок
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     if (this.getAttribute('href') !== '#') {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 block: 'start'
                             });
                             
-                            // Close mobile menu if open
+                            // Закрытие мобильного меню, если оно открыто
                             if (navMenu && navMenu.classList.contains('active')) {
                                 navMenu.classList.remove('active');
                                 mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
             
-            // Search and filter functionality
+            // Функционал поиска и фильтрации
             const searchInput = document.getElementById('searchInput');
             const filterButtons = document.querySelectorAll('.filter-btn');
             const articlesList = document.getElementById('articlesList');
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // Modal functionality
+            // Функционал модального окна
             const readMoreButtons = document.querySelectorAll('.read-more-btn');
             const modal = document.getElementById('articleModal');
             const modalClose = document.getElementById('modalClose');
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Intersection Observer for animations
+            // Наблюдатель пересечений для анимаций
             const animateElements = document.querySelectorAll('.animate-slide-up, .animate-fade');
             
             const observer = new IntersectionObserver((entries) => {
