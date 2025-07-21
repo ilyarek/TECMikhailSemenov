@@ -75,7 +75,7 @@
             transition: var(--transition);
         }
 
-        /* Buttons */
+        /* Кнопки */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -120,7 +120,7 @@
             transform: translateY(-2px);
         }
 
-        /* Header */
+        /* Заголовок */
         header {
             position: fixed;
             top: 0;
@@ -201,7 +201,6 @@
             color: var(--dark);
         }
 
-        /* Hero Section */
         .articles-hero {
             min-height: 60vh;
             display: flex;
@@ -228,7 +227,7 @@
             margin-right: auto;
         }
 
-        /* Search and Filter Section */
+        /* Секция поиска и фильтров */
         .search-section {
             background: var(--white);
             padding: 2rem 0;
@@ -299,7 +298,7 @@
             border-color: var(--primary);
         }
 
-        /* Articles List Section */
+        /* Список статей */
         .articles-section {
             padding: 4rem 0;
             background-color: var(--light-gray);
@@ -479,7 +478,6 @@
             color: var(--dark);
         }
 
-        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -554,7 +552,7 @@
             color: var(--gray);
         }
 
-        /* Footer */
+        /* Футер */
         footer {
             background-color: #f8f9fa;
             color: var(--dark);
@@ -631,7 +629,7 @@
             color: white;
         }
 
-        /* Animations */
+        /* Анимации */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -656,7 +654,7 @@
             animation: slideUp 0.8s ease-out forwards;
         }
 
-        /* Responsive Design */
+        /* Основной дизайн */
         @media (max-width: 768px) {
             section {
                 padding: 4rem 0;
