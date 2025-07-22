@@ -835,11 +835,6 @@
 		left: 50%;
 	        transform: translateX(-50%);   
 	    }
-
-	    .articles-count {
-		left: 50%;
-	        transform: translateX(-50%);   
-	    }
 	}
 	
 	@media (max-width: 480px) {
