@@ -969,6 +969,11 @@
 	        left: 50%;
 	        transform: translateX(-50%);
 	    }
+
+	    .contact-form-wrapper h2::after {
+		left: 50%;
+	        transform: translateX(-50%);   
+	    }
 	}
 	
 	@media (max-width: 480px) {
