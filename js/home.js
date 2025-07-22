@@ -45,47 +45,87 @@
             });
             
             // Отправка формы
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    
-                    const submitButton = this.querySelector('button[type="submit"]');
-                    const originalText = submitButton.innerHTML;
-                    
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-                    submitButton.disabled = true;
-                    
-                    setTimeout(() => {
-                        submitButton.innerHTML = '<i class="fas fa-check"></i> Отправлено!';
-                        
-                        // Показать сообщение об успехе
-                        const notification = document.createElement('div');
-                        notification.innerHTML = `
-                            <div style="position: fixed; bottom: 2rem; right: 2rem; padding: 1rem 1.5rem; background: var(--accent); color: white; border-radius: var(--radius); box-shadow: var(--shadow-lg); z-index: 1000; animation: fadeIn 0.3s ease-out;">
-                                <i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i>
-                                Сообщение успешно отправлено!
-                            </div>
-                        `;
-                        document.body.appendChild(notification);
-                        
-                        // Сброс формы
-                        this.reset();
-                        
-                        setTimeout(() => {
-                            notification.style.animation = 'fadeOut 0.3s ease-out';
-                            setTimeout(() => notification.remove(), 300);
-                        }, 3000);
-                        
-                        setTimeout(() => {
-                            submitButton.innerHTML = originalText;
-                            submitButton.disabled = false;
-                        }, 2000);
-                    }, 1500);
-                });
-            }
+		const contactForm = document.getElementById('contactForm');
+		if (contactForm) {
+		    contactForm.addEventListener('submit', function(e) {
+		        e.preventDefault();
+		        
+		        const submitButton = this.querySelector('button[type="submit"]');
+		        const btnText = submitButton.querySelector('.btn-text');
+		        const btnLoading = submitButton.querySelector('.btn-loading');
+		        const privacyCheckbox = this.querySelector('#privacy');
+		        
+		        if (!privacyCheckbox.checked) {
+		            showNotification('Пожалуйста, примите условия политики конфиденциальности', 'error');
+		            return;
+		        }
+		        
+		        btnText.style.display = 'none';
+		        btnLoading.style.display = 'inline-block';
+		        submitButton.disabled = true;
+		        
+		        const formData = new FormData(this);
+		        const formDataObj = Object.fromEntries(formData.entries());
+		        
+		        // Здесь нужно указать URL вашего обработчика формы на сервере
+		        const formActionURL = 'https://www.mikhailsemenov.com/wp-admin/admin-ajax.php';
+		        
+		        fetch(formActionURL, {
+		            method: 'POST',
+		            headers: {
+		                'Content-Type': 'application/json',
+		            },
+		            body: JSON.stringify(formDataObj)
+		        })
+		        .then(response => {
+		            if (!response.ok) {
+		                throw new Error('Network response was not ok');
+		            }
+		            return response.json();
+		        })
+		        .then(data => {
+		            if (data.success) {
+		                showNotification('Сообщение успешно отправлено!', 'success');
+		                this.reset();
+		            } else {
+		                showNotification('Ошибка при отправке: ' + (data.message || 'Неизвестная ошибка'), 'error');
+		            }
+		        })
+		        .catch(error => {
+		            console.error('Error:', error);
+		            showNotification('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.', 'error');
+		        })
+		        .finally(() => {
+		            btnText.style.display = 'inline-block';
+		            btnLoading.style.display = 'none';
+		            submitButton.disabled = false;
+		        });
+		    });
+		}
+		
+		function showNotification(message, type = 'success') {
+		    const existingNotifications = document.querySelectorAll('.notification');
+		    existingNotifications.forEach(notification => notification.remove());
+		    
+		    const notification = document.createElement('div');
+		    notification.className = `notification notification-${type}`;
+		    notification.innerHTML = `
+		        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+		        <span>${message}</span>
+		    `;
+		    
+		    document.body.appendChild(notification);
+		    
+		    setTimeout(() => {
+		        notification.classList.add('show');
+		    }, 10);
+		    
+		    setTimeout(() => {
+		        notification.classList.remove('show');
+		        setTimeout(() => notification.remove(), 300);
+		    }, 5000);
+		}
             
-            // Инициализация переключения
             const swiper = new Swiper('.swiper', {
                 slidesPerView: 1,
                 spaceBetween: 20,
